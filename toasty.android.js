@@ -2,11 +2,11 @@
 var app = require("application");
 var Toasty = (function () {
     function Toasty(text, duration, position) {
-        this.SHORT = 2000;
-        this.LONG = 4000;
+        this.SHORT = 0;
+        this.LONG = 1;
         this._text = text;
         this.duration = duration;
-        this._toast = android.widget.Toast.makeText(app.android.context, text, 2000);
+        this._toast = android.widget.Toast.makeText(app.android.context, text, this.SHORT);
         this.position = position;
     }
     Object.defineProperty(Toasty.prototype, "duration", {
